@@ -1,13 +1,22 @@
 import { FC } from "react";
 
-import { CounterButton, CounterInput, CounterStyled } from "./Counter.styled";
+import {
+  CounterButton,
+  CounterInput,
+  CounterStyled,
+  CounterWrapper,
+  RemoveButton,
+} from "./Counter.styled";
 
 export const Counter: FC = () => {
   return (
-    <CounterStyled>
-      <CounterButton>-</CounterButton>
-      <CounterInput disabled />
-      <CounterButton>+</CounterButton>
-    </CounterStyled>
+    <CounterWrapper>
+      <CounterStyled>
+        <CounterButton>-</CounterButton>
+        <CounterInput value={2} disabled />
+        <CounterButton>+</CounterButton>
+      </CounterStyled>
+      <RemoveButton>-</RemoveButton>
+    </CounterWrapper>
   );
 };

@@ -89,6 +89,7 @@ const theme = createTheme({
     },
     error: {
       main: "#EB5757",
+      light: "#ffa28a",
     },
     warning: {
       main: "#F2994A",

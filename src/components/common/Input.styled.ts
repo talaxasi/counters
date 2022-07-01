@@ -10,4 +10,5 @@ export const InputStyled = styled("input")(({ theme }) => ({
   transition: theme.transitions.create("all", {
     duration: theme.transitions.duration.standard,
   }),
+  textAlign: "center",
 }));

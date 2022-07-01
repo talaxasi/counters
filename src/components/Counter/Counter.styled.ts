@@ -4,8 +4,15 @@ import { COLOR } from "../../theme";
 import { ButtonStyled } from "../common/Button.styled";
 import { InputStyled } from "../common/Input.styled";
 
+export const CounterWrapper = styled("div")(({ theme }) => ({
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "center",
+  width: theme.spacing(40),
+}));
+
 export const CounterStyled = styled("div")(({ theme }) => ({
-  width: theme.spacing(37),
+  width: theme.spacing(32),
   height: theme.spacing(8),
   display: "flex",
   justifyContent: "space-between",
@@ -28,4 +35,16 @@ export const CounterInput = styled(InputStyled)(({ theme }) => ({
   width: theme.spacing(7),
   height: theme.spacing(7),
   borderRadius: "50%",
+  fontSize: theme.spacing(4),
+  fontWeight: theme.typography.fontWeightRegular,
+}));
+
+export const RemoveButton = styled(CounterButton)(({ theme }) => ({
+  backgroundColor: "transparent",
+  boxShadow: "none",
+  color: theme.palette.error.main,
+  fontSize: theme.spacing(4),
+  "&:hover": {
+    backgroundColor: theme.palette.error.main,
+  },
 }));

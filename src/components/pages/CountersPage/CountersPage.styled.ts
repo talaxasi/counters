@@ -25,7 +25,7 @@ export const CountersWrapper = styled("div")(({ theme }) => ({
 }));
 
 export const Button = styled(ButtonStyled)(({ theme }) => ({
-  width: theme.spacing(37),
+  width: theme.spacing(40),
   height: theme.spacing(8),
   border: `1px solid ${theme.mixins.rateColor(COLOR.BUTTON_BORDER)}`,
   borderRadius: theme.spacing(13),
