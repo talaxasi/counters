@@ -4,10 +4,11 @@ import { COLOR } from "../../theme";
 
 export const ButtonStyled = styled(ButtonBase)(({ theme }) => ({
   color: theme.palette.button.color,
-  background: theme.palette.button.background,
+  background: theme.palette.button.backgroundLight,
   boxShadow: theme.mixins.button.boxShadow,
   padding: theme.spacing(1, 2),
   fontWeight: theme.typography.fontWeightBold,
+  fontSize: theme.spacing(2.5),
   border: `1px solid ${theme.mixins.rateColor(COLOR.TRANSPARENT)}`,
   transition: theme.transitions.create("all", {
     duration: theme.transitions.duration.complex,

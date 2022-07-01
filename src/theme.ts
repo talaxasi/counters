@@ -22,6 +22,7 @@ declare module "@mui/material/styles" {
     };
     button: {
       background: string;
+      backgroundLight: string;
       color: string;
       hover: string;
       border: string;
@@ -44,6 +45,7 @@ declare module "@mui/material/styles" {
     };
     button?: {
       background?: string;
+      backgroundLight?: string;
       color?: string;
       hover?: string;
       border?: string;
@@ -83,6 +85,7 @@ const theme = createTheme({
     },
     success: {
       main: "#219653",
+      light: "#d4f9ca",
     },
     error: {
       main: "#EB5757",
@@ -100,6 +103,7 @@ const theme = createTheme({
     },
     button: {
       background: "#101010",
+      backgroundLight: "#606060",
       color: "#FFF",
       hover: "#f5f5f5",
       border: "rgba(97, 97, 97, .3)",
