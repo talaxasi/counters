@@ -1,26 +1,29 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
+export enum COUNTER_TYPE {
+  COUNTER = "COUNTER",
+  TIMER = "TIMER",
+}
+
 export interface ICounter {
   id: number;
   value: number;
+  type: COUNTER_TYPE;
 }
 
-export interface ICountersState {
-  counters: ICounter[];
-}
+export type ICountersState = ICounter[];
 
-export const initialState: ICountersState = {
-  counters: [],
-};
+export const initialState: ICountersState = [];
 
 const slice = createSlice({
   name: "counters",
   initialState,
   reducers: {
     addCounter: (state, action: PayloadAction<ICounter>) => {
-      console.log(state);
-      console.log(action.payload);
+      state.push(action.payload);
     },
+    // deleteCounter: (state, action: PayloadAction<number>) => {
+    // },
   },
 });
 

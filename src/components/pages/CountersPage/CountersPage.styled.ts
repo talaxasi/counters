@@ -19,7 +19,7 @@ export const CountersWrapper = styled("div")(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
-  overflowY: "hidden",
+  overflowY: "scroll",
   boxShadow: theme.mixins.wrapper.bottomShadow,
   gap: theme.spacing(),
 }));

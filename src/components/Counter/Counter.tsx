@@ -8,14 +8,20 @@ import {
   RemoveButton,
 } from "./Counter.styled";
 
-export const Counter: FC = () => {
+export interface ICounterProps {
+  id: number;
+  value: number;
+}
+
+export const Counter: FC<ICounterProps> = ({ value, id }) => {
+  const indicator = id.toString();
   return (
     <CounterWrapper>
-      <RemoveButton>-</RemoveButton>
+      <RemoveButton id={indicator}>-</RemoveButton>
       <CounterStyled>
-        <CounterButton>-</CounterButton>
-        <CounterInput value={2} disabled />
-        <CounterButton>+</CounterButton>
+        <CounterButton id={indicator}>-</CounterButton>
+        <CounterInput value={value} disabled />
+        <CounterButton id={indicator}>+</CounterButton>
       </CounterStyled>
     </CounterWrapper>
   );

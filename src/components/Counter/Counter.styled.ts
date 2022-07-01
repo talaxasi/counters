@@ -10,6 +10,7 @@ export const CounterWrapper = styled("div")(({ theme }) => ({
   alignItems: "center",
   flexDirection: "column",
   gap: theme.spacing(0.5),
+  minHeight: theme.spacing(10),
   width: theme.spacing(32),
   padding: theme.spacing(0.5),
   borderRadius: theme.spacing(4),
