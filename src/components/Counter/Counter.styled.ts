@@ -8,19 +8,21 @@ export const CounterWrapper = styled("div")(({ theme }) => ({
   display: "flex",
   justifyContent: "space-between",
   alignItems: "center",
-  width: theme.spacing(40),
+  flexDirection: "column",
+  gap: theme.spacing(0.5),
+  width: theme.spacing(32),
+  padding: theme.spacing(0.5),
+  borderRadius: theme.spacing(4),
+  border: `1px solid ${theme.mixins.rateColor(COLOR.INPUT_BORDER)}`,
+  color: theme.palette.text.primary,
+  overflow: "hidden",
 }));
 
-export const CounterStyled = styled("div")(({ theme }) => ({
-  width: theme.spacing(32),
-  height: theme.spacing(8),
+export const CounterStyled = styled("div")(() => ({
+  width: "100%",
   display: "flex",
   justifyContent: "space-between",
   alignItems: "center",
-  padding: theme.spacing(0.5),
-  borderRadius: theme.spacing(4),
-  color: theme.palette.text.primary,
-  border: `1px solid ${theme.mixins.rateColor(COLOR.INPUT_BORDER)}`,
 }));
 
 export const CounterButton = styled(ButtonStyled)(({ theme }) => ({
@@ -39,11 +41,15 @@ export const CounterInput = styled(InputStyled)(({ theme }) => ({
   fontWeight: theme.typography.fontWeightRegular,
 }));
 
-export const RemoveButton = styled(CounterButton)(({ theme }) => ({
+export const RemoveButton = styled(ButtonStyled)(({ theme }) => ({
+  width: "110%",
+  height: theme.spacing(2),
   backgroundColor: "transparent",
   boxShadow: "none",
   color: theme.palette.error.main,
-  fontSize: theme.spacing(4),
+  fontSize: theme.spacing(3),
+  borderRadius: theme.spacing(),
+  marginTop: theme.spacing(-1),
   "&:hover": {
     backgroundColor: theme.palette.error.main,
   },

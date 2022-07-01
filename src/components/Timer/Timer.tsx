@@ -10,10 +10,10 @@ import { TimerStyled } from "./Timer.styled";
 export const Timer: FC = () => {
   return (
     <CounterWrapper>
+      <RemoveButton>-</RemoveButton>
       <TimerStyled>
         <CounterInput disabled />
       </TimerStyled>
-      <RemoveButton>-</RemoveButton>
     </CounterWrapper>
   );
 };

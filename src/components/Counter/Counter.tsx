@@ -11,12 +11,12 @@ import {
 export const Counter: FC = () => {
   return (
     <CounterWrapper>
+      <RemoveButton>-</RemoveButton>
       <CounterStyled>
         <CounterButton>-</CounterButton>
         <CounterInput value={2} disabled />
         <CounterButton>+</CounterButton>
       </CounterStyled>
-      <RemoveButton>-</RemoveButton>
     </CounterWrapper>
   );
 };
