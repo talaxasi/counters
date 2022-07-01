@@ -1,4 +1,4 @@
-import { useCallback } from "react";
+import { useCallback, useMemo } from "react";
 
 import { useAppDispatch, useAppSelector } from "../../../redux/hooks";
 import {
@@ -6,10 +6,15 @@ import {
   COUNTER_TYPE,
 } from "../../../redux/slices/counters/counterSlice";
 
+export type ButtonHandler = Event & {
+  target: HTMLButtonElement;
+};
+
 export const useCounter = () => {
   const dispatch = useAppDispatch();
-  const counters = useAppSelector((state) => state.counters);
-  console.log(counters);
+  const countersObj = useAppSelector((state) => state.counters);
+
+  const counters = useMemo(() => Object.values(countersObj), [countersObj]);
 
   const addCounter = useCallback(() => {
     if (!counters.length) {
@@ -35,8 +40,39 @@ export const useCounter = () => {
     dispatch(actions.addCounter({ id, value, type }));
   }, [counters, dispatch]);
 
+  const increment = useCallback(
+    (event: ButtonHandler) => {
+      const id = Number(event.target.id);
+      dispatch(actions.increment(id));
+    },
+    [dispatch],
+  );
+
+  const decrement = useCallback(
+    (event: ButtonHandler) => {
+      const id = Number(event.target.id);
+      dispatch(actions.decrement(id));
+    },
+    [dispatch],
+  );
+
+  const deleteCounter = useCallback(
+    (event: ButtonHandler) => {
+      const id = Number(event.target.id);
+      dispatch(actions.deleteCounter(id));
+    },
+    [dispatch],
+  );
+
+  const handlers = {
+    increment,
+    decrement,
+    deleteCounter,
+  };
+
   return {
     addCounter,
     counters,
+    handlers,
   };
 };

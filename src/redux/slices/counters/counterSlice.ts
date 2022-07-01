@@ -11,19 +11,29 @@ export interface ICounter {
   type: COUNTER_TYPE;
 }
 
-export type ICountersState = ICounter[];
+export interface ICountersState {
+  [id: number]: ICounter;
+}
 
-export const initialState: ICountersState = [];
+export const initialState: ICountersState = {};
 
 const slice = createSlice({
   name: "counters",
   initialState,
   reducers: {
     addCounter: (state, action: PayloadAction<ICounter>) => {
-      state.push(action.payload);
+      const { id } = action.payload;
+      state[id] = action.payload;
     },
-    // deleteCounter: (state, action: PayloadAction<number>) => {
-    // },
+    deleteCounter: (state, action: PayloadAction<number>) => {
+      delete state[action.payload];
+    },
+    increment: (state, action: PayloadAction<number>) => {
+      state[action.payload].value += 1;
+    },
+    decrement: (state, action: PayloadAction<number>) => {
+      state[action.payload].value -= 1;
+    },
   },
 });
 

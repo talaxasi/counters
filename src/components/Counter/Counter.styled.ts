@@ -11,7 +11,7 @@ export const CounterWrapper = styled("div")(({ theme }) => ({
   flexDirection: "column",
   gap: theme.spacing(0.5),
   minHeight: theme.spacing(10),
-  width: theme.spacing(32),
+  width: theme.spacing(40),
   padding: theme.spacing(0.5),
   borderRadius: theme.spacing(4),
   border: `1px solid ${theme.mixins.rateColor(COLOR.INPUT_BORDER)}`,
@@ -35,9 +35,9 @@ export const CounterButton = styled(ButtonStyled)(({ theme }) => ({
 }));
 
 export const CounterInput = styled(InputStyled)(({ theme }) => ({
-  width: theme.spacing(7),
+  width: theme.spacing(23),
   height: theme.spacing(7),
-  borderRadius: "50%",
+  borderRadius: theme.spacing(3),
   fontSize: theme.spacing(4),
   fontWeight: theme.typography.fontWeightRegular,
 }));

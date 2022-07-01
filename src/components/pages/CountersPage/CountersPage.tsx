@@ -11,16 +11,16 @@ import {
 } from "./CountersPage.styled";
 
 export const CountersPage: FC = () => {
-  const { counters, addCounter } = useCounter();
+  const { counters, addCounter, handlers } = useCounter();
   return (
     <CountersPageStyled>
       <Button onClick={addCounter}>Добавить счетчик</Button>
       <CountersWrapper>
         {counters.map(({ id, value, type }) =>
           type === COUNTER_TYPE.COUNTER ? (
-            <Counter id={id} value={value} />
+            <Counter id={id} value={value} handlers={handlers} key={id} />
           ) : (
-            <Timer id={id} value={value} />
+            <Timer id={id} value={value} handlers={handlers} key={id} />
           ),
         )}
       </CountersWrapper>
